@@ -1,106 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.sap.nfe</groupId>
-		<artifactId>nfe-parent</artifactId>
-		<version>1.1.0</version>
-	</parent>
-
-	<groupId>com.sap.nfe</groupId>
-	<artifactId>library-model</artifactId>
+	<groupId>com.test.sap</groupId>
+	<artifactId>jparepository-parent-boot</artifactId>
 	<version>1.0.0</version>
-	<packaging>jar</packaging>
-
-	<name>Library Model</name>
-	<description>Model for library project</description>
+	<packaging>pom</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+
+		<version.java>1.8</version.java>
+		<version.log4j>2.14.1</version.log4j>
+		<version.lombok>1.18.20</version.lombok>
+		<version.junit-jupiter>5.7.0</version.junit-jupiter>
+		<version.mockito-all>1.9.5</version.mockito-all>
+
+		<maven.compiler.plugin>3.5.1</maven.compiler.plugin>
 	</properties>
 
 	<dependencies>
-		<!-- Logging -->
-		<dependency>
-			<groupId>com.sap.hcp.cf.logging</groupId>
-			<artifactId>cf-java-logging-support-log4j2</artifactId>
-			<version>2.2.1</version>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.sap.hcp.cf.logging</groupId>
-			<artifactId>cf-java-logging-support-servlet</artifactId>
-			<version>2.2.1</version>
-			<optional>true</optional>
-		</dependency>
+		<!--		<dependency>-->
+		<!--			<groupId>com.sap.hcp.cf.logging</groupId>-->
+		<!--			<artifactId>cf-java-logging-support-log4j2</artifactId>-->
+		<!--			<version>2.2.1</version>-->
+		<!--			<optional>true</optional>-->
+		<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>com.sap.hcp.cf.logging</groupId>-->
+		<!--			<artifactId>cf-java-logging-support-servlet</artifactId>-->
+		<!--			<version>2.2.1</version>-->
+		<!--			<optional>true</optional>-->
+		<!--		</dependency>-->
 
+		<!-- Logging -->
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.9.0</version>
+			<version>${version.log4j}</version>
 			<optional>true</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-			<version>2.9.0</version>
+			<version>${version.log4j}</version>
 			<optional>true</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>2.9.0</version>
+			<version>${version.log4j}</version>
 			<optional>true</optional>
 		</dependency>
 
-		<!--Utilities-->
+		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.16</version>
+			<version>${version.lombok}</version>
 			<optional>true</optional>
 		</dependency>
 
-		<!--Tests-->
+		<!--JUnit -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
-			<version>5.5.2</version>
+			<version>${version.junit-jupiter}</version>
 			<scope>test</scope>
 			<optional>true</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
-			<version>1.9.5</version>
+			<version>${version.mockito-all}</version>
 			<scope>test</scope>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
-			<groupId>nl.jqno.equalsverifier</groupId>
-			<artifactId>equalsverifier</artifactId>
-			<version>3.3</version>
-			<scope>test</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.jparams</groupId>
-			<artifactId>to-string-verifier</artifactId>
-			<version>1.4.8</version>
-			<scope>test</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.openpojo</groupId>
-			<artifactId>openpojo</artifactId>
-			<version>0.8.3</version>
-			<scope>test</scope>
-			<optional>true</optional>
-		</dependency>
+
+		<!--		<dependency>-->
+		<!--			<groupId>nl.jqno.equalsverifier</groupId>-->
+		<!--			<artifactId>equalsverifier</artifactId>-->
+		<!--			<version>3.3</version>-->
+		<!--			<scope>test</scope>-->
+		<!--			<optional>true</optional>-->
+		<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>com.jparams</groupId>-->
+		<!--			<artifactId>to-string-verifier</artifactId>-->
+		<!--			<version>1.4.8</version>-->
+		<!--			<scope>test</scope>-->
+		<!--			<optional>true</optional>-->
+		<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>com.openpojo</groupId>-->
+		<!--			<artifactId>openpojo</artifactId>-->
+		<!--			<version>0.8.3</version>-->
+		<!--			<scope>test</scope>-->
+		<!--			<optional>true</optional>-->
+		<!--		</dependency>-->
 	</dependencies>
-	
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+
+		<pluginManagement>
+			<plugins>
+				<!-- see more athttp://maven.apache.org/plugins/index.html -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven.compiler.plugin}</version>
+					<configuration>
+						<source>${version.java}</source>
+						<target>${version.java}</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
 </project>
