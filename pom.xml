@@ -15,6 +15,8 @@
 		<version.java>1.8</version.java>
 		<version.log4j>2.14.1</version.log4j>
 		<version.lombok>1.18.20</version.lombok>
+		<version.hibernate-core>5.4.24.Final</version.hibernate-core>
+
 		<version.junit-jupiter>5.7.0</version.junit-jupiter>
 		<version.mockito-all>1.9.5</version.mockito-all>
 
@@ -22,6 +24,12 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${version.hibernate-core}</version>
+		</dependency>
+
 		<!--		<dependency>-->
 		<!--			<groupId>com.sap.hcp.cf.logging</groupId>-->
 		<!--			<artifactId>cf-java-logging-support-log4j2</artifactId>-->
