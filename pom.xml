@@ -12,15 +12,17 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<version.java>1.8</version.java>
 		<version.log4j>2.14.1</version.log4j>
 		<version.lombok>1.18.20</version.lombok>
+
+		<version.mysql>8.0.25</version.mysql>
 		<version.hibernate-core>5.4.24.Final</version.hibernate-core>
 
 		<version.junit-jupiter>5.7.0</version.junit-jupiter>
 		<version.mockito-all>1.9.5</version.mockito-all>
 
 		<maven.compiler.plugin>3.5.1</maven.compiler.plugin>
+		<version.java>13</version.java>
 	</properties>
 
 	<dependencies>
@@ -30,18 +32,12 @@
 			<version>${version.hibernate-core}</version>
 		</dependency>
 
-		<!--		<dependency>-->
-		<!--			<groupId>com.sap.hcp.cf.logging</groupId>-->
-		<!--			<artifactId>cf-java-logging-support-log4j2</artifactId>-->
-		<!--			<version>2.2.1</version>-->
-		<!--			<optional>true</optional>-->
-		<!--		</dependency>-->
-		<!--		<dependency>-->
-		<!--			<groupId>com.sap.hcp.cf.logging</groupId>-->
-		<!--			<artifactId>cf-java-logging-support-servlet</artifactId>-->
-		<!--			<version>2.2.1</version>-->
-		<!--			<optional>true</optional>-->
-		<!--		</dependency>-->
+		<!-- DB Driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${version.mysql}</version>
+		</dependency>
 
 		<!-- Logging -->
 		<dependency>
@@ -111,14 +107,14 @@
 		<!--			<scope>test</scope>-->
 		<!--			<optional>true</optional>-->
 		<!--		</dependency>-->
+
 	</dependencies>
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
-
 		<pluginManagement>
 			<plugins>
-				<!-- see more athttp://maven.apache.org/plugins/index.html -->
+				<!-- see more at http://maven.apache.org/plugins/index.html -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
